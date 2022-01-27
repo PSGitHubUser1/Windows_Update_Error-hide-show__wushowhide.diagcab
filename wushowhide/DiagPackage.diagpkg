@@ -1,0 +1,253 @@
+<dcmPS:DiagnosticPackage SchemaVersion="1.0" Localized="true" xmlns:dcmPS="http://www.microsoft.com/schemas/dcm/package/2007" xmlns:dcmRS="http://www.microsoft.com/schemas/dcm/resource/2007">
+  <DiagnosticIdentification>
+    <ID>WindowsHideUnhide</ID>
+    <Version>1.0.1.20150615</Version>
+  </DiagnosticIdentification>
+  <!--Diagnostic Display Information-->
+  <DisplayInformation>
+    <Parameters />
+    <Name>@DiagPackage.dll,-33000</Name>
+    <Description>@DiagPackage.dll,-33001</Description>
+  </DisplayInformation>
+  <PrivacyLink>http://go.microsoft.com/fwlink/?LinkId=81184</PrivacyLink>
+  <PowerShellVersion>2.0</PowerShellVersion>
+  <SupportedOSVersion clientSupported="true" serverSupported="true">6.0</SupportedOSVersion>
+  <!--Script Entry Point-->
+  <Troubleshooter>
+    <Script>
+      <Parameters />
+      <ProcessArchitecture>Any</ProcessArchitecture>
+      <RequiresElevation>true</RequiresElevation>
+      <RequiresInteractivity>true</RequiresInteractivity>
+      <FileName>TS_Main.ps1</FileName>
+      <ExtensionPoint />
+    </Script>
+    <ExtensionPoint />
+  </Troubleshooter>
+  <!--Root Cause Section-->
+  <Rootcauses>
+    <Rootcause>
+      <ID>RC_HideUpdates</ID>
+      <DisplayInformation>
+        <Parameters>
+          <Parameter>
+            <Name>VF_Value</Name>
+            <DefaultValue>-</DefaultValue>
+          </Parameter>
+        </Parameters>
+        <Name>@DiagPackage.dll,-33008</Name>
+        <Description />
+      </DisplayInformation>
+      <Resolvers>
+        <Resolver>
+          <ID>RS_HideUpdates</ID>
+          <DisplayInformation>
+            <Parameters>
+              <Parameter>
+                <Name>VF_Value</Name>
+                <DefaultValue>-</DefaultValue>
+              </Parameter>
+            </Parameters>
+            <Name>@DiagPackage.dll,-33004</Name>
+            <Description />
+          </DisplayInformation>
+          <RequiresConsent>false</RequiresConsent>
+          <Script>
+            <Parameters />
+            <ProcessArchitecture>Any</ProcessArchitecture>
+            <RequiresElevation>true</RequiresElevation>
+            <RequiresInteractivity>true</RequiresInteractivity>
+            <FileName>RS_HideUpdates.ps1</FileName>
+            <ExtensionPoint />
+          </Script>
+          <ExtensionPoint />
+        </Resolver>
+      </Resolvers>
+      <Verifier>
+        <Script>
+          <Parameters>
+            <Parameter>
+              <Name>VF_Value</Name>
+              <DefaultValue>-</DefaultValue>
+            </Parameter>
+          </Parameters>
+          <ProcessArchitecture>Any</ProcessArchitecture>
+          <RequiresElevation>true</RequiresElevation>
+          <RequiresInteractivity>false</RequiresInteractivity>
+          <FileName>VF_HideUpdates.ps1</FileName>
+          <ExtensionPoint />
+        </Script>
+        <ExtensionPoint />
+      </Verifier>
+      <ContextParameters />
+      <ExtensionPoint />
+    </Rootcause>
+    <Rootcause>
+      <ID>RC_UnHideUpdates</ID>
+      <DisplayInformation>
+        <Parameters>
+          <Parameter>
+            <Name>VF_Value</Name>
+            <DefaultValue>-</DefaultValue>
+          </Parameter>
+        </Parameters>
+        <Name>@DiagPackage.dll,-33008</Name>
+        <Description />
+      </DisplayInformation>
+      <Resolvers>
+        <Resolver>
+          <ID>RS_UnHideUpdates</ID>
+          <DisplayInformation>
+            <Parameters>
+              <Parameter>
+                <Name>VF_Value</Name>
+                <DefaultValue>-</DefaultValue>
+              </Parameter>
+            </Parameters>
+            <Name>@DiagPackage.dll,-33006</Name>
+            <Description />
+          </DisplayInformation>
+          <RequiresConsent>false</RequiresConsent>
+          <Script>
+            <Parameters />
+            <ProcessArchitecture>Any</ProcessArchitecture>
+            <RequiresElevation>true</RequiresElevation>
+            <RequiresInteractivity>true</RequiresInteractivity>
+            <FileName>RS_UnHideUpdates.ps1</FileName>
+            <ExtensionPoint />
+          </Script>
+          <ExtensionPoint />
+        </Resolver>
+      </Resolvers>
+      <Verifier>
+        <Script>
+          <Parameters>
+            <Parameter>
+              <Name>VF_Value</Name>
+              <DefaultValue>-</DefaultValue>
+            </Parameter>
+          </Parameters>
+          <ProcessArchitecture>Any</ProcessArchitecture>
+          <RequiresElevation>true</RequiresElevation>
+          <RequiresInteractivity>false</RequiresInteractivity>
+          <FileName>VF_UnHideUpdates.ps1</FileName>
+          <ExtensionPoint />
+        </Script>
+        <ExtensionPoint />
+      </Verifier>
+      <ContextParameters />
+      <ExtensionPoint />
+    </Rootcause>
+  </Rootcauses>
+  <!--Interactions-->
+  <Interactions>
+    <SingleResponseInteractions>
+      <!--IT_HideUpdateAvailable-->
+      <SingleResponseInteraction>
+        <AllowDynamicResponses>true</AllowDynamicResponses>
+        <Choices>
+          <Choice>
+            <DisplayInformation>
+              <Parameters />
+              <Name>@DiagPackage.dll,-33004</Name>
+              <Description>@DiagPackage.dll,-33005</Description>
+            </DisplayInformation>
+            <Value>ts_HIDE</Value>
+            <ExtensionPoint>
+              <NoCache />
+              <CommandLinks />
+            </ExtensionPoint>
+          </Choice>
+          <Choice>
+            <DisplayInformation>
+              <Parameters />
+              <Name>@DiagPackage.dll,-33006</Name>
+              <Description>@DiagPackage.dll,-33007</Description>
+            </DisplayInformation>
+            <Value>ts_UNHIDE</Value>
+            <ExtensionPoint>
+              <NoCache />
+              <CommandLinks />
+            </ExtensionPoint>
+          </Choice>
+        </Choices>
+        <ID>IT_HideUpdateAvailable</ID>
+        <DisplayInformation>
+          <Parameters />
+          <Name>@DiagPackage.dll,-33000</Name>
+          <Description>@DiagPackage.dll,-33003</Description>
+        </DisplayInformation>
+        <ContextParameters />
+        <ExtensionPoint>
+          <CommandLinks />
+        </ExtensionPoint>
+      </SingleResponseInteraction>
+    </SingleResponseInteractions>
+    <MultipleResponseInteractions>
+      <MultipleResponseInteraction>
+        <AllowDynamicResponses>true</AllowDynamicResponses>
+        <Choices>
+        </Choices>
+        <ID>HideChoice</ID>
+        <DisplayInformation>
+          <Parameters />
+          <Name>@DiagPackage.dll,-33004</Name>
+          <Description>@DiagPackage.dll,-33009</Description>
+        </DisplayInformation>
+        <ContextParameters />
+        <ExtensionPoint />
+      </MultipleResponseInteraction>
+      <MultipleResponseInteraction>
+        <AllowDynamicResponses>true</AllowDynamicResponses>
+        <Choices>
+        </Choices>
+        <ID>UnHideChoice</ID>
+        <DisplayInformation>
+          <Parameters />
+          <Name>@DiagPackage.dll,-33006</Name>
+          <Description>@DiagPackage.dll,-33010</Description>
+        </DisplayInformation>
+        <ContextParameters />
+        <ExtensionPoint />
+      </MultipleResponseInteraction>
+    </MultipleResponseInteractions>
+    <TextInteractions>
+    </TextInteractions>
+    <PauseInteractions>
+      <!--IT_NoUpdate-->
+      <PauseInteraction>
+        <ID>IT_NoUpdate</ID>
+        <DisplayInformation>
+          <Parameters>
+            <Parameter>
+              <Name>Noupdate</Name>
+              <DefaultValue>-</DefaultValue>
+            </Parameter>
+          </Parameters>
+          <Name>@DiagPackage.dll,-33002</Name>
+          <Description />
+        </DisplayInformation>
+        <ContextParameters />
+        <ExtensionPoint />
+      </PauseInteraction>
+      <PauseInteraction>
+        <ID>INT_OS_NotSupported</ID>
+        <DisplayInformation>
+          <Parameters>
+          </Parameters>
+          <Name>@DiagPackage.dll,-13145</Name>
+          <Description>@DiagPackage.dll,-13146</Description>
+        </DisplayInformation>
+        <ContextParameters />
+        <ExtensionPoint />
+      </PauseInteraction>
+    </PauseInteractions>
+    <LaunchUIInteractions>
+    </LaunchUIInteractions>
+  </Interactions>
+  <!--Diagnostic Extensions-->
+  <ExtensionPoint>
+    <Icon>@DiagPackage.dll,-1005</Icon>
+    <SupportDivision>Windows</SupportDivision>
+  </ExtensionPoint>
+</dcmPS:DiagnosticPackage>

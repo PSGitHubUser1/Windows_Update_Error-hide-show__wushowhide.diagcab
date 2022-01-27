@@ -1,0 +1,3 @@
+﻿ConvertFrom-StringData @'
+search_progress=Recherche de mises à jour en cours...
+'@
